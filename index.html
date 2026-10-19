@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دنیای کوچولوی کوثر 🍒</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&family=Lalezar&display=swap');
+
+:root {
+    --cherry: #b82043;
+    --dark: #74172f;
+    --blueberry: #344b88;
+    --blue-light: #dce5ff;
+    --cream: #fff8ef;
+    --paper: #fffdf8;
+    --pink: #f4d9de;
+    --ink: #452735;
+    --muted: #997782;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Vazirmatn', sans-serif;
+    overflow-x: hidden;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+button:focus-visible {
+    outline: 3px solid var(--blueberry);
+    outline-offset: 4px;
+}
+
+#app {
+    min-height: 100vh;
+    background: var(--cream);
+    overflow: hidden;
+}
+
+.topbar {
+    padding: 17px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid #b8204326;
+    font-size: 11px;
+}
+
+.brand {
+    color: var(--cherry);
+    font-weight: 800;
+}
+
+.status {
+    color: var(--blueberry);
+    font-size: 10px;
+}
+
+.hero {
+    min-height: 660px;
+    padding: 75px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    background:
+        radial-gradient(ellipse at 12% 15%, #f5d5dd 0%, transparent 33%),
+        radial-gradient(ellipse at 88% 80%, #dce5ff 0%, transparent 34%),
+        var(--cream);
+}
+
+.hero-inner {
+    max-width: 750px;
+    position: relative;
+    z-index: 2;
+}
+
+.eyebrow {
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: var(--blueberry);
+    margin-bottom: 20px;
+}
+
+.fruit {
+    font-size: 65px;
+    margin-bottom: 12px;
+    animation: bob 3s ease-in-out infinite;
+}
+
+@keyframes bob {
+    0%, 100% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+.hero h1 {
+    font-family: 'Lalezar', cursive;
+    font-weight: 400;
+    font-size: clamp(45px, 11vw, 88px);
+    line-height: 1.35;
+    color: var(--cherry);
+}
+
+.hero h1 span {
+    color: var(--blueberry);
+}
+
+.hero-subtitle {
+    max-width: 370px;
+    margin: 18px auto 27px;
+    color: #85616d;
+    font-size: 14px;
+    line-height: 2.2;
+}
+
+.primary-btn {
+    border: none;
+    background: var(--cherry);
+    color: white;
+    padding: 15px 25px;
+    font-size: 12px;
+    border-radius: 3px;
+    box-shadow: 5px 5px 0 var(--dark);
+    transition: .2s;
+}
+
+.primary-btn:hover {
+    transform: translate(3px, 3px);
+    box-shadow: 2px 2px 0 var(--dark);
+}
+
+.hero-foot {
+    margin-top: 30px;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.sticker {
+    position: absolute;
+    background: var(--paper);
+    padding: 12px;
+    border: 1px solid #b8204330;
+    box-shadow: 4px 5px 0 #b8204315;
+    font-size: 11px;
+}
+
+.sticker.one {
+    left: 5%;
+    top: 19%;
+    transform: rotate(-7deg);
+}
+
+.sticker.two {
+    right: 5%;
+    bottom: 20%;
+    color: var(--blueberry);
+    transform: rotate(6deg);
+}
+
+.floating {
+    position: absolute;
+    font-size: 25px;
+    animation: bob 4s infinite ease-in-out;
+}
+
+.f1 { top: 12%; right: 20%; }
+.f2 { bottom: 12%; left: 20%; animation-delay: 1s; }
+.f3 { top: 20%; left: 18%; animation-delay: .5s; }
+
+.section {
+    padding: 85px 7%;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 42px;
+}
+
+.heading .eyebrow {
+    margin-bottom: 10px;
+}
+
+.heading h2 {
+    font-family: 'Lalezar', cursive;
+    font-weight: 400;
+    font-size: clamp(35px, 7vw, 52px);
+    color: var(--cherry);
+}
+
+.heading h2 span {
+    color: var(--blueberry);
+}
+
+.heading p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 2;
+    margin-top: 8px;
+}
+
+.desk {
+    background: var(--blueberry);
+}
+
+.desk .heading h2 {
+    color: var(--cream);
+}
+
+.desk .heading h2 span {
+    color: #f4cbd4;
+}
+
+.desk .heading p,
+.desk .eyebrow {
+    color: #d0dbff;
+}
+
+.desk-grid {
+    max-width: 920px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.desk-card {
+    background: var(--paper);
+    padding: 25px 18px;
+    min-height: 210px;
+    text-align: center;
+    border: 1px solid #ffffff65;
+    transition: transform .25s;
+}
+
+.desk-card:nth-child(1) { transform: rotate(-2deg); }
+.desk-card:nth-child(2) { transform: translateY(12px); }
+.desk-card:nth-child(3) { transform: rotate(2deg); }
+
+.desk-card:hover {
+    transform: translateY(-5px);
+}
+
+.desk-card .icon {
+    font-size: 38px;
+    margin: 15px 0;
+}
+
+.desk-card h3 {
+    font-family: 'Lalezar', cursive;
+    font-size: 23px;
+    font-weight: 400;
+    color: var(--cherry);
+    margin-bottom: 8px;
+}
+
+.desk-card p {
+    font-size: 11px;
+    color: #8d6b76;
+    line-height: 2;
+}
+
+.cake-section {
+    background:
+        radial-gradient(ellipse at 0% 100%, #f3d8de, transparent 40%),
+        var(--cream);
+}
+
+.cake-area {
+    max-width: 600px;
+    margin: auto;
+    padding: 35px 22px;
+    background: var(--paper);
+    border: 1px solid #b820432b;
+    box-shadow: 7px 7px 0 #b8204310;
+    text-align: center;
+}
+
+.cake {
+    width: 170px;
+    height: 155px;
+    margin: 15px auto 20px;
+    position: relative;
+    cursor: pointer;
+    transition: transform .3s;
+}
+
+.cake:hover {
+    transform: scale(1.04);
+}
+
+.plate {
+    position: absolute;
+    bottom: 5px;
+    width: 170px;
+    height: 17px;
+    border-radius: 50%;
+    background: var(--blue-light);
+    border: 2px solid var(--blueberry);
+}
+
+.cake-bottom {
+    position: absolute;
+    bottom: 21px;
+    right: 13px;
+    width: 144px;
+    height: 54px;
+    border: 2px solid var(--dark);
+    background: #ed9cae;
+    border-radius: 5px 5px 12px 12px;
+}
+
+.cake-bottom::after {
+    content: "♥  ♥  ♥";
+    position: absolute;
+    width: 100%;
+    top: 15px;
+    text-align: center;
+    color: var(--cherry);
+    font-size: 16px;
+}
+
+.cake-top {
+    position: absolute;
+    bottom: 72px;
+    right: 13px;
+    width: 144px;
+    height: 35px;
+    border: 2px solid var(--dark);
+    background: #ffe1e4;
+    border-radius: 50% 50% 8px 8px;
+}
+
+.candle {
+    position: absolute;
+    bottom: 105px;
+    width: 7px;
+    height: 28px;
+    background: repeating-linear-gradient(45deg, white 0 4px, #758dd0 4px 7px);
+    border: 1px solid var(--blueberry);
+    border-radius: 2px;
+}
+
+.candle:nth-child(2) { right: 53px; }
+.candle:nth-child(3) { right: 81px; }
+.candle:nth-child(4) { right: 109px; }
+
+.flame {
+    position: absolute;
+    top: -12px;
+    left: -2px;
+    width: 9px;
+    height: 12px;
+    background: #f4ad48;
+    border-radius: 50%;
+    box-shadow: 0 0 12px #f4ad4880;
+    animation: flicker .7s infinite alternate;
+}
+
+@keyframes flicker {
+    to { transform: scale(.8) rotate(5deg); }
+}
+
+.cake.blown .flame {
+    display: none;
+}
+
+.cake-note {
+    font-family: 'Lalezar', cursive;
+    font-size: 23px;
+    color: var(--cherry);
+}
+
+.cake-help {
+    font-size: 11px;
+    color: var(--muted);
+    margin: 8px 0 20px;
+}
+
+.secondary-btn {
+    padding: 12px 18px;
+    background: var(--blueberry);
+    color: white;
+    border: none;
+    font-size: 11px;
+}
+
+.wish-result {
+    display: none;
+    margin: 20px auto 0;
+    max-width: 350px;
+    color: var(--cherry);
+    font-size: 15px;
+    line-height: 2;
+}
+
+.wish-result.visible {
+    display: block;
+    animation: appear .5s ease;
+}
+
+.letter-section {
+    background: #f3dfe2;
+}
+
+.letter-grid {
+    max-width: 850px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 45px;
+}
+
+.envelope-scene {
+    min-height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.envelope {
+    width: 280px;
+    height: 175px;
+    position: relative;
+    cursor: pointer;
+    filter: drop-shadow(5px 9px 0 #74172f12);
+}
+
+.env-body {
+    position: absolute;
+    inset: 0;
+    background: var(--cherry);
+    overflow: hidden;
+}
+
+.env-body::before,
+.env-body::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-top: 87px solid transparent;
+    z-index: 2;
+}
+
+.env-body::before {
+    right: 0;
+    border-left: 140px solid #a41c3a;
+}
+
+.env-body::after {
+    left: 0;
+    border-right: 140px solid #8f1834;
+}
+
+.env-flap {
+    position: absolute;
+    inset: 0;
+    height: 95px;
+    background: #cf4662;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    transform-origin: top;
+    transition: transform .5s;
+    z-index: 4;
+}
+
+.env-heart {
+    position: absolute;
+    top: 63px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 29px;
+    z-index: 5;
+    transition: .3s;
+}
+
+.envelope.open .env-flap {
+    transform: rotateX(180deg);
+    z-index: 1;
+}
+
+.envelope.open .env-heart {
+    opacity: 0;
+}
+
+.envelope-label {
+    position: absolute;
+    width: 100%;
+    bottom: -33px;
+    text-align: center;
+    color: var(--cherry);
+    font-size: 10px;
+}
+
+.letter-copy .eyebrow {
+    margin-bottom: 14px;
+}
+
+.letter-copy h2 {
+    font-family: 'Lalezar', cursive;
+    font-weight: 400;
+    font-size: clamp(36px, 6vw, 50px);
+    line-height: 1.5;
+    color: var(--cherry);
+    margin-bottom: 12px;
+}
+
+.letter-copy h2 span {
+    color: var(--blueberry);
+}
+
+.letter-copy > p {
+    font-size: 12px;
+    color: #775560;
+    line-height: 2.2;
+    margin-bottom: 20px;
+}
+
+.note-box {
+    display: none;
+    margin-top: 24px;
+    padding: 22px;
+    background: var(--paper);
+    border: 1px dashed #c52b4966;
+    box-shadow: 4px 4px 0 #b8204310;
+}
+
+.note-box.visible {
+    display: block;
+    animation: appear .4s ease;
+}
+
+.note-box p {
+    font-size: 12px;
+    line-height: 2.3;
+    color: #76535d;
+    margin-bottom: 12px;
+}
+
+.note-box .sign {
+    text-align: left;
+    color: var(--cherry);
+    font-weight: 700;
+    margin-top: 18px;
+}
+
+.secret-section {
+    background: var(--cream);
+}
+
+.secret-card {
+    max-width: 620px;
+    margin: auto;
+    border: 1px dashed #344b8860;
+    padding: 35px 25px;
+    text-align: center;
+    background: var(--paper);
+    position: relative;
+}
+
+.secret-tag {
+    display: inline-block;
+    background: var(--blueberry);
+    color: white;
+    font-size: 9px;
+    padding: 6px 15px;
+    margin-bottom: 22px;
+}
+
+.secret-lock {
+    font-size: 40px;
+    margin-bottom: 13px;
+}
+
+.secret-card h3 {
+    font-family: 'Lalezar', cursive;
+    font-weight: 400;
+    font-size: 27px;
+    color: var(--cherry);
+    margin-bottom: 10px;
+}
+
+.secret-card > p {
+    font-size: 12px;
+    line-height: 2;
+    color: var(--muted);
+    margin-bottom: 20px;
+}
+
+.secret-message {
+    display: none;
+    margin-top: 23px;
+    padding-top: 23px;
+    border-top: 1px solid #b820432b;
+    font-size: 15px;
+    line-height: 2.3;
+    color: var(--blueberry);
+}
+
+.secret-message.visible {
+    display: block;
+    animation: appear .5s ease;
+}
+
+.secret-message small {
+    display: block;
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 15px;
+}
+
+.footer {
+    background: var(--dark);
+    color: #ffe9e9;
+    padding: 45px 20px;
+    text-align: center;
+}
+
+.footer-fruit {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.footer h2 {
+    font-family: 'Lalezar', cursive;
+    font-weight: 400;
+    font-size: 33px;
+    margin-bottom: 10px;
+}
+
+.footer p {
+    font-size: 11px;
+    line-height: 2.2;
+    color: #f2c8d0;
+}
+
+.footer small {
+    display: block;
+    margin-top: 25px;
+    font-size: 9px;
+    opacity: .7;
+}
+
+.pop {
+    position: fixed;
+    top: -35px;
+    z-index: 50;
+    pointer-events: none;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(600deg);
+        opacity: 0;
+    }
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 650px) {
+    .hero {
+        min-height: 580px;
+    }
+
+    .sticker.one {
+        left: 1%;
+        top: 8%;
+    }
+
+    .sticker.two {
+        right: 1%;
+        bottom: 8%;
+    }
+
+    .section {
+        padding: 65px 6%;
+    }
+
+    .desk-grid {
+        grid-template-columns: 1fr;
+        gap: 17px;
+    }
+
+    .desk-card,
+    .desk-card:nth-child(1),
+    .desk-card:nth-child(2),
+    .desk-card:nth-child(3) {
+        transform: none;
+        min-height: 175px;
+    }
+
+    .letter-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .letter-copy {
+        text-align: center;
+    }
+
+    .envelope-scene {
+        min-height: 240px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+
+<body>
+<div id="app">
+
+<header class="topbar">
+    <div class="brand">♥ دنیای کوچولوی کوثر</div>
+    <div class="status">یه گوشه از اینترنت، فقط برای تو!</div>
+</header>
+
+<!-- بخش اول -->
+<section class="hero" id="home">
+    <span class="floating f1">✳</span>
+    <span class="floating f2">♡</span>
+    <span class="floating f3">✧</span>
+
+    <div class="hero-inner">
+        <div class="eyebrow">یک مقصد خیلی مهم در اینترنت!</div>
+
+        <div class="fruit">🍒</div>
+
+        <h1>امروز همه‌چی<br><span>درباره‌ی توئه!</span></h1>
+
+        <p class="hero-subtitle">
+            یه گوشه‌ی کوچولو از اینترنت<br>
+            که فقط برای یه آدم خاص ساخته شده. 💌
+        </p>
+
+        <button class="primary-btn" onclick="enterUniverse()">
+            بیا توی دنیای خودت! ←
+        </button>
+
+        <div class="hero-foot">
+            ساخته‌شده با عشق، کمی تأخیر و کلی گیلاس!
+        </div>
+    </div>
+
+    <div class="sticker one">★ دختر تولدی<br>تأییدشده!</div>
+    <div class="sticker two">ساخته‌شده فقط برای تو 🫐</div>
+</section>
+
+<!-- بخش دوم -->
+<section class="section desk" id="universe">
+    <div class="heading">
+        <div class="eyebrow">پرونده‌ی شماره‌ی ۰۰۱ ـ محرمانه</div>
+        <h2>بخش <span>تولدی‌ها!</span></h2>
+        <p>اینجا داریم رسماً ثبت می‌کنیم که چقدر خفنی.</p>
+    </div>
+
+    <div class="desk-grid">
+        <article class="desk-card">
+            <div class="icon">🍒</div>
+            <h3>نازترین موجود دنیا</h3>
+            <p>مدرکی برای این‌که جهان گاهی واقعاً یه کار درست انجام می‌ده!</p>
+        </article>
+
+        <article class="desk-card">
+            <div class="icon">🫐</div>
+            <h3>نسخه‌ی کمیاب</h3>
+            <p>فقط یه دونه ازت وجود داره؛ لطفاً با احتیاط نگهداری شو!</p>
+        </article>
+
+        <article class="desk-card">
+            <div class="icon">🎀</div>
+            <h3>شخصیت اصلی داستان</h3>
+            <p>امیدوارم فصل جدید زندگیت پر از اتفاقای قشنگ و پایانای خوش باشه.</p>
+        </article>
+    </div>
+</section>
+
+<!-- بخش سوم -->
+<section class="section cake-section" id="cake">
+    <div class="heading">
+        <div class="eyebrow">مراسم رسمی تولد تو</div>
+        <h2>یه آرزو <span>کن!</span></h2>
+        <p>چشماتو ببند و به یه چیز قشنگ فکر کن.</p>
+    </div>
+
+    <div class="cake-area">
+        <div class="cake" id="cakeArt" onclick="blowCandles()" role="button" tabindex="0" aria-label="خاموش کردن شمع‌های تولد">
+            <div class="plate"></div>
+            <div class="cake-bottom"></div>
+            <div class="cake-top"></div>
+            <div class="candle"><span class="flame"></span></div>
+            <div class="candle"><span class="flame"></span></div>
+            <div class="candle"><span class="flame"></span></div>
+        </div>
+
+        <div class="cake-note" id="cakeNote">یه کیک کوچولو برای یه آدم بزرگ!</div>
+        <p class="cake-help">روی کیک کلیک کن تا شمع‌هاتو فوت کنی.</p>
+
+        <button class="secondary-btn" onclick="blowCandles()">
+            آرزوتو بفرست به دنیا ✧
+        </button>
+
+        <div class="wish-result" id="wishResult">
+            امیدوارم حتی قشنگ‌ترین آرزوهایی که هنوز به زبون نیاوردی هم یه روزی به حقیقت تبدیل بشن. ♡
+        </div>
+    </div>
+</section>
+
+<!-- بخش چهارم -->
+<section class="section letter-section" id="letter">
+    <div class="letter-grid">
+        <div class="envelope-scene">
+            <div class="envelope" id="envelope" onclick="openLetter()" role="button" tabindex="0" aria-label="باز کردن نامه">
+                <div class="env-body"></div>
+                <div class="env-flap"></div>
+                <div class="env-heart">♥</div>
+                <div class="envelope-label">یه نامه برای کوثر</div>
+            </div>
+        </div>
+
+        <div class="letter-copy">
+            <div class="eyebrow">مستقیم از ته دل!</div>
+
+            <h2>یه نامه‌ی کوچولو،<br><span>فقط برای تو.</span></h2>
+
+            <p>
+                بعضی حرفا بیشتر از یه پیام ساده ارزش دارن.
+                برای همین برات یه گوشه‌ی کوچولو از اینترنت ساختم.
+                حالا دیگه خودت می‌دونی با این همه کیوتی چیکار کنی! ♡
+            </p>
+
+            <button class="primary-btn" onclick="openLetter()">
+                نامه‌تو باز کن! 💌
+            </button>
+
+            <div class="note-box" id="noteBox">
+                <p>
+                    خببب، قبل از هر چیزی می‌شه همگی وانمود کنیم
+                    که من اصلاً تولدتو یادم نرفته بود؟ مرسی واقعاً. 😭
+                </p>
+
+                <p>
+                    شاید تبریکم یه کوچولو دیر رسیده باشه،
+                    ولی این دلیل نمی‌شه که کمتر از بقیه لایق عشق،
+                    خوشحالی و قشنگ‌ترین اتفاقای دنیا باشی.
+                </p>
+
+                <p>
+                    امیدوارم سال جدید زندگیت پر از خاطرات خوش،
+                    آدمای واقعی، خنده‌های از ته دل و لحظه‌هایی باشه
+                    که با خودت بگی: «وای، زندگی گاهی چقدر قشنگه!»
+                </p>
+
+                <p>
+                    امیدوارم همیشه خوشحالی‌ای داشته باشی که موندنی باشه،
+                    آدمایی کنارت باشن که دوست داشتنشون واقعی باشه
+                    و هر روزت یه دلیل کوچولو برای لبخند زدن داشته باشه.
+                </p>
+
+                <p>
+                    خلاصه که اینم تبریک رسمی تولدت،
+                    با تأخیری کاملاً غیرضروری ولی با عشقی کاملاً واقعی! 💅🏻
+                </p>
+
+                <p>
+                    تولدت مبارک کوثر جانم! 🍒🫐
+                    امیدوارم امسال زندگی باهات حسابی مهربون باشه
+                    و کلی اتفاق خوب منتظرت باشه.
+                </p>
+
+                <div class="sign">با کلی عشق، مهرآسا ♡</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- بخش پنجم -->
+<section class="section secret-section" id="secret">
+    <div class="heading">
+        <div class="eyebrow">لطفاً این پرونده را محفوظ نگه دارید!</div>
+        <h2>هیس... یه چیز <span>دیگه!</span></h2>
+        <p>یه پیام مخفی دیگه هم اینجا قایم شده.</p>
+    </div>
+
+    <div class="secret-card">
+        <div class="secret-tag">کاملاً محرمانه</div>
+
+        <div class="secret-lock">🔐</div>
+
+        <h3>یه پیام مخصوص خودت!</h3>
+
+        <p>این قسمت فقط برای چشم‌های کوثره. پس کنجکاویتو به کار بنداز!</p>
+
+        <button class="secondary-btn" onclick="revealSecret()">
+            راز رو کشف کن ♡
+        </button>
+
+        <div class="secret-message" id="secretMessage">
+            توی دنیایی که خیلی چیزا زودگذرن،
+            امیدوارم همیشه آدمایی رو پیدا کنی که کنارشون
+            زندگی یه ذره جادویی‌تر به نظر برسه. ♡
+
+            <small>پایان پرونده‌ی محرمانه ـ یادت نره که دوست‌داشتنی هستی!</small>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-fruit">🍒 🫐</div>
+    <h2>برای تو ساخته شد، کوثر عزیزم!</h2>
+
+    <p>
+        یه کوچولو دیر، یه کوچولو دیوونه‌بازی،<br>
+        ولی با کلی عشق و علاقه. ♡
+    </p>
+
+    <small>پایان دنیای کوچولوی تو · مراقب خودت باش!</small>
+</footer>
+
+</div>
+
+<script>
+function enterUniverse() {
+    document.getElementById('universe').scrollIntoView({
+        behavior: 'smooth'
+    });
+    confetti(18);
+}
+
+function blowCandles() {
+    const cake = document.getElementById('cakeArt');
+    const note = document.getElementById('cakeNote');
+    const result = document.getElementById('wishResult');
+
+    if (cake.classList.contains('blown')) {
+        cake.classList.remove('blown');
+        note.textContent = 'یه کیک کوچولو برای یه آدم بزرگ!';
+        result.classList.remove('visible');
+        return;
+    }
+
+    cake.classList.add('blown');
+    note.textContent = 'آرزوت رفت پیش کائنات! ✧';
+    result.classList.add('visible');
+    confetti(35);
+}
+
+function openLetter() {
+    const envelope = document.getElementById('envelope');
+    const note = document.getElementById('noteBox');
+
+    envelope.classList.toggle('open');
+    note.classList.toggle('visible');
+
+    if (note.classList.contains('visible')) {
+        setTimeout(() => {
+            note.scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest'
+            });
+        }, 150);
+
+        confetti(20);
+    }
+}
+
+function revealSecret() {
+    const message = document.getElementById('secretMessage');
+    message.classList.toggle('visible');
+
+    if (message.classList.contains('visible')) {
+        confetti(30);
+    }
+}
+
+function confetti(amount) {
+    const symbols = ['♡', '✧', '🍒', '🫐', '✳', '♥'];
+    const colors = ['#b82043', '#344b88', '#e9a3b3', '#8298d0'];
+
+    for (let i = 0; i < amount; i++) {
+        const piece = document.createElement('span');
+
+        piece.className = 'pop';
+        piece.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+        piece.style.left = Math.random() * 100 + 'vw';
+        piece.style.color = colors[Math.floor(Math.random() * colors.length)];
+        piece.style.fontSize = (12 + Math.random() * 17) + 'px';
+        piece.style.animationDuration = (2.5 + Math.random() * 3) + 's';
+        piece.style.animationDelay = Math.random() * .7 + 's';
+
+        document.body.appendChild(piece);
+
+        setTimeout(() => piece.remove(), 6500);
+    }
+}
+
+document.getElementById('cakeArt').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        blowCandles();
+    }
+});
+
+document.getElementById('envelope').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openLetter();
+    }
+});
+</script>
+
+</body>
+</html>
